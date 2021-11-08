@@ -1,0 +1,16 @@
+@import 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&amp;display=swap';
+
+#root,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+// Variables
+@import './variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Components
+@import './components/layout';
