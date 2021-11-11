@@ -5,7 +5,7 @@ import { Subscription } from 'components';
 export class Home extends Component {
   render() {
     return (
-      <Row>
+      <Row className="mt-5">
         <Col lg="12" className="d-none d-lg-block mb-3">
           <h1>Edit Subscription</h1>
         </Col>

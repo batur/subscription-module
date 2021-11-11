@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Card } from 'react-bootstrap';
 import DayPicker from 'react-day-picker';
+
 export default class DatePicker extends Component<{}, { selectedDay: any }> {
   constructor(props: any) {
     super(props);
@@ -29,6 +30,8 @@ export default class DatePicker extends Component<{}, { selectedDay: any }> {
             <div className="w-75">
               <DayPicker
                 className="shadow"
+                firstDayOfWeek={1}
+                disabledDays={{ daysOfWeek: [0, 6] }}
                 selectedDays={this.state.selectedDay}
                 onDayClick={this.handleDayClick}
               />
