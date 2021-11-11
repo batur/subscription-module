@@ -6,22 +6,22 @@ import { Link } from 'react-router-dom';
 export default class Sidebar extends Component {
   render() {
     return (
-      <Card className="shadow pe-5">
+      <Card className="shadow pe-5 rounded-4">
         <Card.Body className="ms-1">
-          <Link to="#" className="text-dark text-decoration-none p-2 mb-2">
+          <Link to="#" className="text-success text-decoration-none p-2 mb-2">
             <div className="d-flex align-items-center">
               <Gift size={28} />
               <span className="mb-0 ms-3 h5">Edit Delivery</span>
             </div>
           </Link>
-          <Link to="#" className="text-dark text-decoration-none p-2 mb-2">
-            <div className="d-flex align-items-center">
+          <Link to="#" className="text-dark text-decoration-none p-2 mb-2 ">
+            <div className="d-flex align-items-center opacity-75">
               <PauseCircle size={28} />
-              <span className="mb-0 ms-3 h5">Pause Subscription</span>
+              <span className="mb-0 ms-3 h5 ">Pause Subscription</span>
             </div>
           </Link>
           <Link to="#" className="text-dark text-decoration-none p-2 mb-2">
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center opacity-7">
               <XCircle size={28} />
               <span className="mb-0 ms-3 h5">Cancel Subscription</span>
             </div>

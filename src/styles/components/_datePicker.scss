@@ -31,6 +31,11 @@
 
   &-Day {
     border-radius: 0.625rem;
+    font-size: 18px;
     width: 40px;
+
+    &[aria-selected='true'] {
+      background-color: #48cbbe !important;
+    }
   }
 }

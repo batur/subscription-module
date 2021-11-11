@@ -43,24 +43,28 @@ class MobileMenu extends Component {
           </Offcanvas.Header>
           <Offcanvas.Body className="d-flex justify-content-center align-items-center text-center">
             <div>
-              <Link to="/" className="text-dark text-decoration-none" onClick={this.closeDrawer}>
-                <h3 className="mb-3 ">Home{}</h3>
+              <Link to="/" className="text-success text-decoration-none" onClick={this.closeDrawer}>
+                <h3 className="mb-3 ">Home</h3>
               </Link>
               <Link
                 to="/about-1"
-                className="text-dark text-decoration-none"
+                className="text-brown text-decoration-none"
                 onClick={this.closeDrawer}
               >
                 <h3 className="mb-3">How does it work</h3>
               </Link>
               <Link
                 to="/about-2"
-                className="text-dark text-decoration-none"
+                className="text-brown text-decoration-none"
                 onClick={this.closeDrawer}
               >
                 <h3 className="mb-3">Why Beijeped?</h3>
               </Link>
-              <Link to="cart" className="text-dark text-decoration-none" onClick={this.closeDrawer}>
+              <Link
+                to="cart"
+                className="text-brown text-decoration-none"
+                onClick={this.closeDrawer}
+              >
                 <h3 className="mb-3">Cart</h3>
               </Link>
             </div>
