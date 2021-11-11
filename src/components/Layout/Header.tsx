@@ -42,7 +42,7 @@ class MobileMenu extends Component {
             </Button>
           </Offcanvas.Header>
           <Offcanvas.Body className="d-flex justify-content-center align-items-center text-center">
-            <div>
+            <div className="d-flex flex-column gap-3">
               <Link to="/" className="text-success text-decoration-none" onClick={this.closeDrawer}>
                 <h3 className="mb-3 ">Home</h3>
               </Link>

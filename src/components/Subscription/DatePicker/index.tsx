@@ -42,7 +42,7 @@ export default class DatePicker extends Component<{}, { selectedDay: any }> {
             </Col>
             <div className="mt-3 o-50">
               <p>Your next heavy flow will be delivered:</p>
-              <p>
+              <p className="text-sun">
                 {this.state.selectedDay &&
                   `${date.DateToStringWithFormat(
                     this.state.selectedDay,

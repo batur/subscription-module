@@ -9,10 +9,16 @@ export class Home extends Component {
         <Col lg="12" className="d-none d-lg-block mb-3">
           <h1>Edit Subscription</h1>
         </Col>
-        <Col lg="auto" className="d-none d-lg-block">
+        <Col
+          className="mb-4 mb-sm-0 mb-md-4"
+          xs="12"
+          md={{ span: 12, order: 0 }}
+          lg={{ span: 4, order: 1 }}
+          xl="auto"
+        >
           <Subscription.Sidebar />
         </Col>
-        <Col lg="8">
+        <Col md={{ span: 12, order: 1 }} lg="8" xl="8">
           <Subscription.DatePicker />
         </Col>
       </Row>
