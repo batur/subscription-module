@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Link, NavLink, useMatch, useResolvedPath } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Container, Navbar, Offcanvas, Button } from 'react-bootstrap';
 import { ChevronLeft, Menu, ShoppingCart, X } from 'react-feather';

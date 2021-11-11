@@ -9,7 +9,7 @@ export class Layout extends React.Component {
     return (
       <>
         <Header />
-        <Container fluid className="main" as="main">
+        <Container className="main mt-3" as="main">
           <Outlet />
         </Container>
       </>
