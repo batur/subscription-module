@@ -1,0 +1,36 @@
+.DayPicker {
+  width: 100%;
+
+  &-NavBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem 0 2rem;
+    z-index: 999;
+  }
+  &-NavButton {
+    position: inherit;
+    z-index: 999;
+  }
+
+  &-Months {
+  }
+
+  &-Month {
+    position: relative;
+    top: -2.3rem;
+    width: 100%;
+    border-spacing: 5px;
+    border-collapse: separate;
+  }
+
+  &-Caption {
+    margin-left: auto;
+    text-align: center;
+    z-index: -1;
+  }
+
+  &-Day {
+    border-radius: 0.625rem;
+    width: 40px;
+  }
+}

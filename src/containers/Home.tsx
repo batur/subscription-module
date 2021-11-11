@@ -6,13 +6,13 @@ export class Home extends Component {
   render() {
     return (
       <Row>
-        <Col lg="12" className="mb-3">
+        <Col lg="12" className="d-none d-lg-block mb-3">
           <h1>Edit Subscription</h1>
         </Col>
-        <Col lg="3">
+        <Col lg="auto" className="d-none d-lg-block">
           <Subscription.Sidebar />
         </Col>
-        <Col lg={{ span: 8, offset: 1 }}>
+        <Col lg="8">
           <Subscription.DatePicker />
         </Col>
       </Row>
