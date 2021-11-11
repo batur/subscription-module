@@ -5,12 +5,19 @@ import DayPicker from 'react-day-picker';
 
 import { date } from 'lib';
 
-export default class DatePicker extends Component<{}, { selectedDay: any }> {
-  constructor(props: any) {
+interface IProps {
+  onSaveButtonClick: (date: string) => void;
+  value: string;
+}
+interface IState {
+  selectedDay: Date;
+}
+export default class DatePicker extends Component<IProps, IState> {
+  constructor(props: { onSaveButtonClick: () => void; value: string }) {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.state = {
-      selectedDay: undefined,
+      selectedDay: date.stringToDate(props.value),
     };
   }
 
@@ -18,6 +25,10 @@ export default class DatePicker extends Component<{}, { selectedDay: any }> {
     this.setState({
       selectedDay: day,
     });
+  }
+
+  handleSaveButtonClick() {
+    this.props.onSaveButtonClick(this.state.selectedDay.toDateString());
   }
 
   render() {
@@ -51,7 +62,12 @@ export default class DatePicker extends Component<{}, { selectedDay: any }> {
               </p>
             </div>
             <div className="d-grid d-lg-block mt-4">
-              <Button variant="dark" size="lg" className=" block rounded-pill">
+              <Button
+                onClick={() => this.handleSaveButtonClick()}
+                variant="dark"
+                size="lg"
+                className=" block rounded-pill"
+              >
                 <span>SAVE</span>
               </Button>
             </div>

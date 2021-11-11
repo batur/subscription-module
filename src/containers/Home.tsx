@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 import { Subscription } from 'components';
+import { store } from 'context';
 export class Home extends Component {
   render() {
     return (
@@ -19,7 +20,10 @@ export class Home extends Component {
           <Subscription.Sidebar />
         </Col>
         <Col md={{ span: 12, order: 1 }} lg="8" xl="8">
-          <Subscription.DatePicker />
+          <Subscription.DatePicker
+            value={store.getState().date}
+            onSaveButtonClick={(day) => store.dispatch({ type: 'SET_DATE', payload: day })}
+          />
         </Col>
       </Row>
     );
