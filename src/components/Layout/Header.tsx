@@ -116,13 +116,48 @@ class DesktopMenu extends Component {
   }
 }
 
-class Header extends Component {
+type IHeaderState = {
+  width: number;
+};
+class Header extends Component<{}, IHeaderState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      width: window.innerWidth,
+    };
+  }
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
+
   render() {
-    return (
-      <Navbar expand="lg" className="shadow">
-        <Container fluid>{window.innerWidth < 992 ? <MobileMenu /> : <DesktopMenu />}</Container>
-      </Navbar>
-    );
+    const isMobile = this.state.width <= 992;
+
+    if (isMobile) {
+      return (
+        <Navbar expand="lg" className="shadow">
+          <Container fluid>
+            <MobileMenu />
+          </Container>
+        </Navbar>
+      );
+    } else {
+      return (
+        <Navbar expand="lg" className="shadow">
+          <Container fluid>
+            <DesktopMenu />
+          </Container>
+        </Navbar>
+      );
+    }
   }
 }
 

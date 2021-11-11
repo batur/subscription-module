@@ -1,33 +1,92 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
-import { Gift, PauseCircle, XCircle } from 'react-feather';
 import { Link } from 'react-router-dom';
+import { Card, Button, Container } from 'react-bootstrap';
 
-export default class Sidebar extends Component {
+import { Gift, PauseCircle, XCircle } from 'react-feather';
+
+import { Modal } from 'components';
+
+enum DIALOG_STATUS {
+  CANCEL = 'CANCEL',
+  PAUSE = 'PAUSE',
+}
+
+interface IState {
+  isPauseModalOpen: boolean;
+  isCancelModalOpen: boolean;
+}
+export default class Sidebar extends Component<{}, IState> {
+  constructor(props: any) {
+    super(props);
+    this.handleCancelModal = this.handleCancelModal.bind(this);
+    this.handlePauseModal = this.handlePauseModal.bind(this);
+    this.state = {
+      isPauseModalOpen: false,
+      isCancelModalOpen: false,
+    };
+  }
+
+  handlePauseModal = () => {
+    this.setState({ isPauseModalOpen: !this.state.isPauseModalOpen });
+  };
+
+  handleCancelModal = () => {
+    console.log('test');
+
+    this.setState({ isCancelModalOpen: !this.state.isCancelModalOpen });
+  };
+
   render() {
     return (
-      <Card className="shadow pe-5 rounded-4">
-        <Card.Body className="ms-1">
-          <Link to="#" className="text-success text-decoration-none p-2 mb-2">
-            <div className="d-flex align-items-center">
-              <Gift size={28} />
-              <span className="mb-0 ms-3 h5">Edit Delivery</span>
-            </div>
-          </Link>
-          <Link to="#" className="text-dark text-decoration-none p-2 mb-2 ">
-            <div className="d-flex align-items-center opacity-75">
-              <PauseCircle size={28} />
-              <span className="mb-0 ms-3 h5 ">Pause Subscription</span>
-            </div>
-          </Link>
-          <Link to="#" className="text-dark text-decoration-none p-2 mb-2">
-            <div className="d-flex align-items-center opacity-7">
-              <XCircle size={28} />
-              <span className="mb-0 ms-3 h5">Cancel Subscription</span>
-            </div>
-          </Link>
-        </Card.Body>
-      </Card>
+      <>
+        <Card className="shadow rounded-4">
+          <Card.Body className="ms-1 d-grid gap-3">
+            <Button
+              variant="outline-light"
+              className="border-0 text-success bg-transparent d-flex align-items-center"
+            >
+              <Gift size={26} />
+              <span className="ms-2 h5 mb-0 fw-lighter">Edit Subscription</span>
+            </Button>
+            <Button
+              variant="outline-light"
+              className="border-0 opacity-75 text-sun bg-transparent d-flex align-items-center"
+              onClick={this.handlePauseModal}
+            >
+              <PauseCircle size={26} />
+              <span className="ms-2 h5 mb-0">Pause Subscription</span>
+            </Button>
+            <Button
+              variant="outline-light"
+              className="border-0 opacity-75 text-sun bg-transparent d-flex align-items-center"
+              onClick={this.handleCancelModal}
+            >
+              <XCircle size={26} />
+              <span className="ms-2 h5 mb-0">Cancel Subscription</span>
+            </Button>
+          </Card.Body>
+        </Card>
+        <Modal
+          show={this.state.isPauseModalOpen}
+          onHide={this.handlePauseModal}
+          label={'Pause subscription'}
+          dialogStatus={DIALOG_STATUS.PAUSE}
+        >
+          <Container>
+            <h2 className="h4"> Are sure pause your subscription?</h2>
+          </Container>
+        </Modal>
+        <Modal
+          show={this.state.isCancelModalOpen}
+          onHide={this.handleCancelModal}
+          label={'Cancel subscription'}
+          dialogStatus={DIALOG_STATUS.CANCEL}
+        >
+          <Container>
+            <h2 className="h4"> Are sure cancel your subscription?</h2>
+          </Container>
+        </Modal>
+      </>
     );
   }
 }
