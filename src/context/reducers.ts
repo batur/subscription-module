@@ -1,16 +1,18 @@
+import { createSlice } from '@reduxjs/toolkit';
 import { date } from 'lib';
 
-export default function reducers(
-  state = { date: date.DateToStringWithFormat(date.now(), 'dd-MM-yyyy') },
-  action: { payload: string; type: string }
-) {
-  switch (action.type) {
-    case 'SET_DATE':
-      return {
-        ...state,
-        date: action.payload,
-      };
-    default:
-      return state;
-  }
-}
+const initialState = { date: date.DateToStringWithFormat(date.now(), 'dd-MM-yyyy') };
+
+const dateSlice = createSlice({
+  name: 'date',
+  initialState,
+  reducers: {
+    setDate: (state, action) => {
+      state.date = action.payload;
+    },
+  },
+});
+
+export const { setDate } = dateSlice.actions;
+
+export default dateSlice.reducer;
