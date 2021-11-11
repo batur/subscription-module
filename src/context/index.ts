@@ -1,4 +1,5 @@
-import reducers from './reducers';
+import actions from './actions';
+import reducer from './reducers';
 import store from './store';
 
-export { store, reducers };
+export { actions, store, reducer };

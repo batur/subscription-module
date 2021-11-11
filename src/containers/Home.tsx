@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 import { Subscription } from 'components';
-import { store } from 'context';
+import { store, actions } from 'context';
 export class Home extends Component {
   render() {
     return (

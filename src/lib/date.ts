@@ -11,4 +11,9 @@ function now(): Date {
 function stringToDate(dateString: string): Date {
   return DateTime.fromFormat(dateString, 'dd-MM-yyyy').toJSDate();
 }
-export default { DateToStringWithFormat, now, stringToDate };
+
+function firstDayofMonth(): Date {
+  return DateTime.local().startOf('month').minus({ days: 1 }).toJSDate();
+}
+
+export default { DateToStringWithFormat, now, stringToDate, firstDayofMonth };

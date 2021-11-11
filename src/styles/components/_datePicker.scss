@@ -10,6 +10,11 @@
   &-NavButton {
     position: inherit;
     z-index: 999;
+
+    &--interactionDisabled {
+      display: block;
+      visibility: hidden;
+    }
   }
 
   &-Months {
