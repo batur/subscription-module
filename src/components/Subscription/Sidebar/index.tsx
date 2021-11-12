@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap';
 
 import { Gift, PauseCircle, XCircle } from 'react-feather';

@@ -16,4 +16,5 @@ function firstDayofMonth(): Date {
   return DateTime.local().startOf('month').minus({ days: 1 }).toJSDate();
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { DateToStringWithFormat, now, stringToDate, firstDayofMonth };

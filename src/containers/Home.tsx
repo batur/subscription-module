@@ -22,7 +22,7 @@ export class Home extends Component {
         <Col md={{ span: 12, order: 1 }} lg="8" xl="8">
           <Subscription.DatePicker
             value={store.getState().date}
-            onSaveButtonClick={(day) => store.dispatch({ type: 'SET_DATE', payload: day })}
+            onSaveButtonClick={(day) => store.dispatch(actions.setDate(day))}
           />
         </Col>
       </Row>

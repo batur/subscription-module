@@ -13,4 +13,5 @@ const setCancelled = (cancelled: boolean) => ({
   payload: cancelled,
 });
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { setDate, setPaused, setCancelled };
