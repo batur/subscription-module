@@ -72,6 +72,7 @@ export default class DatePicker extends Component<IProps, IState> {
               </div>
               <div className="d-grid d-lg-block mt-4">
                 <Button
+                  data-testid="save-button"
                   onClick={() => this.handleSaveButtonClick()}
                   variant="dark"
                   size="lg"
