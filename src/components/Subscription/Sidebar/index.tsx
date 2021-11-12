@@ -30,8 +30,6 @@ export default class Sidebar extends Component<{}, IState> {
   };
 
   handleCancelModal = () => {
-    console.log('test');
-
     this.setState({ isCancelModalOpen: !this.state.isCancelModalOpen });
   };
 
